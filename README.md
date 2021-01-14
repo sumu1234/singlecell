@@ -9,6 +9,8 @@
 data_VISp="/picb/neurosys/LJ/BigData/GLHu/20191218/"
 data_VISp2="/picb/neurosys/LJ/BigData/GLHu/20191225/"
 ```
+> 不是把所有日期的数据放到一起，而是每个单独跑，最后去批次。
+
 > 食蟹猴参考基因组数据： 
 
 `/data/neurosys-svr2/Junjiem/DecisionTree/monkey_selfsequencing/ref/macaca_fascicularis` 
