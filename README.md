@@ -19,6 +19,7 @@ data_VISp2="/picb/neurosys/LJ/BigData/GLHu/20191225/"
 > [seurat](https://satijalab.org/seurat/)用于后续分析
 > [cellRanger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)下机数据处理的官方软件
 > [周周笔记](https://github.com/small-west/single_cell_RNA_seq/blob/main/10xgenomics_data_preprocesing.md)里是鼠的数据做的单细胞
+> [微信单细胞测序流程文章](https://mp.weixin.qq.com/s/jXxoRHC1FcHQMGbgPCADoA)
 > 先学cellRanger，run的时候抽时间看文献，那三篇文献就是些review
 
 
