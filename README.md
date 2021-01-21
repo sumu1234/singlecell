@@ -99,6 +99,11 @@ $ cellranger count --id=19X118 \
 ```
 ####aggr
 ```
+-bash-4.2$ cat sc_seq.csv 
+library_id,molecule_h5
+19R139,/picb/neurosys/mouxiaoqin/singlecell/pre_mRNA_1225_1218/19R139/outs/molecule_info.h5
+19X118,/picb/neurosys/mouxiaoqin/singlecell/pre_mRNA_1225_1218/19X118/outs/molecule_info.h5
 
+$ cellranger aggr --id=19 --csv=sc_seq.csv --normalize=mapped
 
 ```
