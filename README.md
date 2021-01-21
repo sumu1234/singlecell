@@ -37,8 +37,8 @@ $ multiqc ./
 ```
 参照：[multiqc的安装](https://www.jianshu.com/p/4783ffbb1347)
 
-###前处理--cellranger
-####制作参考基因组
+### 前处理--cellranger
+#### 制作参考基因组
 ```
 # Download annotation .gtf file
 $ wget ftp://ftp.ensembl.org/pub/release-98/gtf/.../....chr.gtf.gz
@@ -80,7 +80,7 @@ $ cellranger mkref \
 --fasta=Macaca_fascicularis.Macaca_fascicularis_5.0.dna_sm.toplevel.fa \
 --genes=Macaca_fascicularis.Macaca_fascicularis_5.0.102.chr.pre_mrna.filtered.gtf
 ```
-####count
+### count
 ```
 $ refer_path=/picb/neurosys/mouxiaoqin/BigData/ref/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_5.0.102.chr.pre_mrna.filtered
 ##1225的样本
@@ -97,7 +97,7 @@ $ cellranger count --id=19X118 \
 --fastqs=$fastq_path1218 \
 --sample=19X118-2-1,19X118-2-2,19X118-2-3,19X118-2-4
 ```
-####aggr
+### aggr
 ```
 -bash-4.2$ cat sc_seq.csv 
 library_id,molecule_h5
