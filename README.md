@@ -15,7 +15,8 @@ $ data_VISp2="/picb/neurosys/LJ/BigData/GLHu/20191225/"
 
 `/data/neurosys-svr2/Junjiem/DecisionTree/monkey_selfsequencing/ref/macaca_fascicularis` 
 
-> 此外（也可以在[ensemble](http://ensemblgenomes.org/)里面找）怎么找？？？
+> 此外也可以在ensembl里面找到[gtf](ftp://ftp.ensembl.org/pub/release-102/gtf/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_5.0.102.chr.gtf.gz)文件与[fa](ensembleftp://ftp.ensembl.org/pub/release-102/fasta/macaca_fascicularis/dna/Macaca_fascicularis.Macaca_fascicularis_5.0.dna_sm.toplevel.fa.gz)文件
+要理解一下这些文件的内容分别包含什么？？？
 
 ### 学习资源
 > [seurat](https://satijalab.org/seurat/)用于后续分析
@@ -39,6 +40,26 @@ $ multiqc ./
 ###前处理--cellranger
 ####制作参考基因组
 ```
+# Download annotation .gtf file
+$ wget ftp://ftp.ensembl.org/pub/release-98/gtf/.../....chr.gtf.gz
+$ gunzip ....chr.gtf.gz
+
+# Download .fa file
+$ wget ftp://ftp.ensembl.org/pub/release-98/fasta/.../dna/....primary_assembly.fa.gz
+$ gunzip ....primary_assembly.fa.gz
+
+# .gtf processing 
+$ cellranger mkgtf \
+...chr.gtf \
+...chr.filtered.gtf \
+--attribute=gene_biotype:protein_coding
+
+# .fa processing
+$ cellranger mkref \
+--genome=<Name> # directory saved the result\
+--fasta=...fa \
+--genes=...chr.filtered.gtf
+####正式跑的代码
 (base) -bash-4.2$ 
 $ nohup wget ftp://ftp.ensembl.org/pub/release-102/fasta/macaca_fascicularis/dna/Macaca_fascicularis.Macaca_fascicularis_5.0.dna_sm.toplevel.fa.gz &
 $ nohup wget ftp://ftp.ensembl.org/pub/release-102/gtf/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_5.0.102.chr.gtf.gz &
