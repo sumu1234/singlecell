@@ -65,11 +65,11 @@ $ nohup wget ftp://ftp.ensembl.org/pub/release-102/fasta/macaca_fascicularis/dna
 $ nohup wget ftp://ftp.ensembl.org/pub/release-102/gtf/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_5.0.102.chr.gtf.gz &
 $ gunzip Macaca_fascicularis.Macaca_fascicularis_5.0.dna_sm.toplevel.fa.gz
 $ gunzip Macaca_fascicularis.Macaca_fascicularis_5.0.102.chr.gtf.gz
-```
+
 # dealing with origin .gtf file into pre-mRNA origin file
 $ awk 'BEGIN{FS="\t"; OFS="\t"} $3 == "transcript"{ print; $3="exon"; $9 = gensub("(transcript_id\\s\"{0,1})([^;\"]+)(\"{0,1});", "\\1\\2_premrna\\3;", "g", $9); print; next}{print}' \
        ...gtf > ...premrna.gtf
-```
+
 ## 为什么是用dna_sm这个，与dna的有什么区别？
 $ cellranger mkgtf \
 Macaca_fascicularis.Macaca_fascicularis_5.0.102.chr.pre_mrna.gtf \
